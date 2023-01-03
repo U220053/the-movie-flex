@@ -1,7 +1,12 @@
 import "./App.css";
+// import requests from './requests';
+import Banner from "./components/Banner";
 
 function App() {
-  return <div>Hello world</div>;
+  return <div>
+    <Banner />
+  </div>;
+  
 }
 
 export default App;
