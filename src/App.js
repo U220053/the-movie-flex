@@ -1,6 +1,6 @@
 import "./App.css";
 // import requests from './requests';
-import Banner from "./components/Banner";
+import Banner from "./components/Banner/Banner";
 import Card from "./components/Card/Card";
 
 function App() {

@@ -2,14 +2,14 @@
   /* background-color: aqua; */
   height: auto;
   width: 100%;
-  width: 70%;
+  width: 90%;
   margin: auto;
   padding: 4rem 1.8rem;
   padding-right: 0;
 }
 .cardRow{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   row-gap: 1rem;
   /* margin: 4rem 2rem 1rem 4rem; */
   /* background-color: aqua; */
@@ -80,7 +80,7 @@ color: #fff;
 .cardRow {
   display: grid;
   row-gap: 1rem;
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   grid-template-columns: repeat(4, 1fr);
   /* background-color: aqua; */
   /* margin: 4rem auto; */
@@ -90,7 +90,7 @@ color: #fff;
 .cardRow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   row-gap: 1rem;
   /* background-color: aqua; */
   /* margin: 4rem auto; */
@@ -103,7 +103,7 @@ color: #fff;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1rem;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
   }
 }
 @media only screen and (max-width: 560px){
@@ -116,7 +116,7 @@ color: #fff;
     padding-right: 0;
   }
   .cardRow {
-    /* margin-left: 3rem; */
+    margin-left: 4rem;
     /* background-color: aqua; */
     /* margin: 4rem auto; */
     display: grid;
