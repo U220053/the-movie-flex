@@ -32,8 +32,9 @@
        font-family: 'Poppins', sans-serif;
        letter-spacing: 2px;
    }
-   banner__buttons{
-    margin-left: 33px;
+   .banner__buttons{
+        margin-top: 1rem;
+            margin-left: 2rem;
    }
    .banner__button{
        cursor: pointer;
@@ -42,13 +43,13 @@
        border: 1px solid white;
        font-weight: 700;
        border-radius: 0.2vw;
-       padding-left: 2rem;
-       padding-right: 2rem;
-       margin-right: 1rem;
-       padding-top: 0.5rem;
+       padding: 0.5rem 2rem;
+        margin: 0 0.5rem;
+       /* margin-right: 1rem; */
+       /* padding-top: 0.5rem; */
        background-color: rgba(51 ,51 ,51 , 0.5);
-       padding-bottom: 0.5rem;
-       margin-left: 2.5rem;
+       /* padding-bottom: 0.5rem; */
+       /* margin-left: 2.5rem; */
    }
 
 .banner__buttons{
