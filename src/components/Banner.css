@@ -2,11 +2,14 @@
     color: white;
     object-fit: contain;
     height: 448px;
+
+    
    }
    .banner__contents{
        margin-left: 30px;
        padding-top: 140px;
        height: 190px;
+    
    }
    .banner__title{
        font-size: 3rem;
@@ -23,6 +26,9 @@
        height: 80px;
        margin-left: 2.5rem;
    }
+   banner__buttons{
+    margin-left: 33px;
+   }
    .banner__button{
        cursor: pointer;
        color: #fff;
@@ -30,13 +36,12 @@
        border: none;
        font-weight: 700;
        border-radius: 0.2vw;
-       padding-left: 2rem;
-       padding-right: 2rem;
-       margin-right: 1rem;
-       padding-top: 0.5rem;
+       padding: 0.5rem 2rem;
+       margin: 0 0.5rem;
+       /* margin-right: 1rem; */
        background-color: rgba(51 ,51 ,51 , 0.5);
-       padding-bottom: 0.5rem;
-       margin-left: 2.5rem;
+       
+       /* margin-left: 2.5rem; */
    }
    /* .banner__button1{
     cursor: pointer;

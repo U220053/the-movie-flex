@@ -1,0 +1,126 @@
+.card{
+  /* background-color: aqua; */
+  height: auto;
+  width: 100%;
+  width: 70%;
+  margin: auto;
+  padding: 4rem 1.8rem;
+  padding-right: 0;
+}
+.cardRow{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1rem;
+  /* margin: 4rem 2rem 1rem 4rem; */
+  /* background-color: aqua; */
+  /* margin-left: 3rem; */
+}
+
+.cardCol{
+  height: auto;
+  width: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 4px solid rgb(6, 25, 132);
+  position: relative;
+}
+.cardImg{
+  width: 100%; 
+  height: 100%;
+
+}
+.cardImg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardText{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background: #1f3d4738 !important;
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+.cardHeading{
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 500;
+color: #fff;
+}
+.cardSubheading{
+  margin: 2px 20px;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+}
+.cardPara{
+  font-size: 7px !important;
+  line-height: 18px;
+  margin: 20px;
+  font-weight:100;
+  color: #fff;
+}
+.cardCol:hover .cardText{
+  right: 0;
+
+
+}
+
+@media only screen and (max-width: 1300px){
+.cardRow {
+  display: grid;
+  row-gap: 1rem;
+  margin-left: 3rem;
+  grid-template-columns: repeat(4, 1fr);
+  /* background-color: aqua; */
+  /* margin: 4rem auto; */
+  }
+}
+@media only screen and (max-width: 1070px){
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 3rem;
+  row-gap: 1rem;
+  /* background-color: aqua; */
+  /* margin: 4rem auto; */
+  }
+}
+@media only screen and (max-width: 850px){
+.cardRow {
+    /* margin: 4rem auto; */
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    margin-left: 3rem;
+  }
+}
+@media only screen and (max-width: 560px){
+.card {
+    /* background-color: aqua; */
+   
+    width: 95%;
+    margin: auto;
+    padding: 2rem 0rem;
+    padding-right: 0;
+  }
+  .cardRow {
+    /* margin-left: 3rem; */
+    /* background-color: aqua; */
+    /* margin: 4rem auto; */
+    display: grid;
+    grid-template-columns: 90%;
+    row-gap: 1rem;
+  }
+}
