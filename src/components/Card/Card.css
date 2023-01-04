@@ -2,9 +2,9 @@
   /* background-color: aqua; */
   height: auto;
   width: 100%;
-  width: 90%;
+  width: 95%;
   margin: auto;
-  padding: 4rem 1.8rem;
+  padding: 4rem 0.7rem;
   padding-right: 0;
 }
 .cardRow{
@@ -17,8 +17,8 @@
 }
 
 .cardCol{
-  height: auto;
-  width: 90%;
+  height: 450px;
+  width: 97%;
   border-radius: 20px;
   overflow: hidden;
   border: 4px solid rgb(6, 25, 132);
@@ -70,6 +70,12 @@ color: #fff;
   font-weight:100;
   color: #fff;
 }
+.cardRating{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  margin-left: 20px;
+}
 .cardCol:hover .cardText{
   right: 0;
 
@@ -112,11 +118,11 @@ color: #fff;
    
     width: 95%;
     margin: auto;
-    padding: 2rem 0rem;
-    padding-right: 0;
+    padding: 2rem 0.4rem;
+    padding-left: 3.2rem;
   }
   .cardRow {
-    margin-left: 4rem;
+    /* margin-left: 4rem; */
     /* background-color: aqua; */
     /* margin: 4rem auto; */
     display: grid;
