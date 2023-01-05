@@ -2,6 +2,8 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  --primary-color: rgb(15, 14, 17);
+  --secondary-color: rgb(231, 232, 234);
 }
 ::-webkit-scrollbar{
   display: none;

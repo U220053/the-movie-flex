@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { truncate } from "../../handlers/descriptionHandlers";
 import "./Banner.css";
-import axios from "../../axios";
-import requests from "../../requests";
 import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 
-function Banner() {
-  const [movie, setMovie] = useState([]);
-  const [trailerurl, setTrailerurl] = useState("");
-
-  useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
-
-      setMovie(
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
-      );
-      return request;
-    }
-    fetchData();
-  }, []);
-
-  function truncate(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-  }
-
+function Banner({ movie, trailerurl, setTrailerurl }) {
   const handleClick = (movie) => {
     if (trailerurl) {
       setTrailerurl("");
