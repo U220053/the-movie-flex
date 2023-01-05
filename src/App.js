@@ -16,13 +16,15 @@ function App() {
     fetchData(`${requests.fetchTrending}${page}`)
       .then((data) => {
         console.log(data);
-        setTotalPages(data.results.total_pages);
+        setTotalPages(data.total_pages);
+        console.log(totalPages);
         const index = Math.floor(Math.random() * data.results.length - 1);
         setMovie(data.results[index]);
         setShows(data.results);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [page]);
+
   return (
     <div>
       <Banner

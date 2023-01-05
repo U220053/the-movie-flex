@@ -121,10 +121,17 @@ color: #fff;
 .card {
     /* background-color: aqua; */
    
-    width: 95%;
-    margin: auto;
-    padding: 2rem 0.4rem;
-    padding-left: 3.2rem;
+      width: 100%;
+        /* margin: auto; */
+        padding: 2rem 0.4rem;
+        padding-left: 3.5rem;
+  }
+  .card-container{
+    height: auto;
+      width: 100%;
+      margin: auto;
+      padding: 4rem 0rem;
+      padding-right: 0;
   }
   .cardRow {
     /* margin-left: 4rem; */
