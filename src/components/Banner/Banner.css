@@ -75,15 +75,32 @@
    }
 
    @media only screen and (max-width: 560px){ 
-    .banner{
-         width: 50em !important; 
+    .banner__description{
+         /* width: 50em !important;  */
+            max-width: 80%;
+            line-height: 1;
+            margin-top: 1rem;
         
     }
-    
+    .banner{
+        over-fit:cover;
+    }
+    .banner__title{
+        max-width: 100%;
+        font-size: 1.5rem;
+       
+    }
+    .banner__contents {
+        margin-left: 0px;
+        height: 200px;
+    }
+    .banner__button{
+        margin: 5px 0.5rem;
+    }
 } 
-@media only screen and (max-width: 850px){ 
-    .banner{
-        width: 50em !important;
-        
+/* @media only screen and (max-width: 850px){ 
+    .banner__description{
+         width: 50em !important; 
+        max-width: 80%;
     }
-}
+} */
