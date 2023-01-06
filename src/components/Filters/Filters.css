@@ -1,0 +1,44 @@
+.filters{
+    width: 100%;
+    background-color: var(--primary-color);
+    
+}
+.filter-container{
+    width: 100%;
+    display: flex;
+    padding: 0px 70px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding-top: 50px;
+}
+.link-filter{
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    width: 10em;
+    background-color: #20232c;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1150px){
+    .filter-container{
+        padding: 0px 30px;
+        padding-top: 20px;
+        
+    }
+    .link-filter{
+        font-size: 1em;
+       width: fit-content;
+       padding: 13px ;
+    }
+}
+@media only screen and (max-width: 800px){
+    .filter-container{
+        flex-direction: column;
+    }
+    .link-filter {
+        font-size: 1em;
+        width: 12em;
+        padding: 13px;
+    }
+}

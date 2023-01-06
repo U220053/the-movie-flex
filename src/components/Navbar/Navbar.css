@@ -53,7 +53,7 @@
         height: 42px;
         cursor: pointer;
         text-align: center;
-        color: #a4a4a4;
+        color: #fff;
         -webkit-transition: all 0.25s linear;
         transition: all 0.25s linear;
         background: transparent;
@@ -64,7 +64,7 @@
 }
 .fa-search{
     border-radius: 50%;
-    background-color: #34963c;
+    background-color: #da6e5d;
     font-size: 20px;
     padding: 11px;
     color: #fff;
