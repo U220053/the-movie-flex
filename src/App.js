@@ -12,17 +12,23 @@ function App() {
   const [trailerurl, setTrailerurl] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [lastPage, setLastPage] = useState(9);
+  const [firstPage, setFirstPage] = useState(1);
   useEffect(() => {
     fetchData(`${requests.fetchTrending}${page}`)
       .then((data) => {
-        console.log(data);
         setTotalPages(data.total_pages);
-        console.log(totalPages);
         const index = Math.floor(Math.random() * data.results.length - 1);
         setMovie(data.results[index]);
         setShows(data.results);
+        if (page === lastPage && page < totalPages + 10) {
+          setFirstPage(page);
+          setLastPage((l) => l + 9);
+        }
+        window.scrollTo(0, 0);
       })
       .catch((err) => console.error(err));
+    // eslint-disable-next-line
   }, [page]);
 
   return (
@@ -33,7 +39,15 @@ function App() {
         setTrailerurl={setTrailerurl}
       />
       <Cards shows={shows} />
-      <Pages totalPages={totalPages} page={page} setPage={setPage} />
+      <Pages
+        totalPages={totalPages}
+        page={page}
+        setPage={setPage}
+        lastPage={lastPage}
+        firstPage={firstPage}
+        setFirstPage={setFirstPage}
+        setLastPage={setLastPage}
+      />
     </div>
   );
 }

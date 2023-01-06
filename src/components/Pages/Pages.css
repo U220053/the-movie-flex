@@ -9,7 +9,7 @@
     background-color: var(--primary-color)
 
 }
-.button_container button{
+.button_container .page-btn{
     font-size: 1.5rem;
     padding:0.7rem 1rem;
     outline: none;
@@ -20,16 +20,27 @@
     border-radius: 5px;
     border: 1px solid var(--secondary-color);
     transition: 0.3s !important;
+    cursor: pointer;
     
 }
-
-.button_container button:hover{
+.disable{
+    cursor: no-drop;
+}
+.extension{
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: none;
+    color:var(--secondary-color) ;
+    margin: 0 6px;
+    font-size: 1.5rem;
+}
+.button_container .page-btn:hover{
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 .active_button{
     background-color: var(--secondary-color) !important;
-        color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
 }
 
 

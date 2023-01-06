@@ -3,15 +3,17 @@ import Card from "./Card";
 
 function Cards({ shows }) {
   return (
-    <div className="card">
-      <div className="card-container">
-        <div className="cardRow">
-          {shows.map((show) => (
-            <Card key={show.id} show={show} />
-          ))}
+    <>
+      <div className="card">
+        <div className="card-container">
+          <div className="cardRow">
+            {shows.map((show) => (
+              <Card key={show.id} show={show} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
