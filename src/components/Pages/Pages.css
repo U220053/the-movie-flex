@@ -45,7 +45,7 @@
 
 
 @media screen and (max-width: 900px) {
-    .button_container button {
+    .button_container .page-btn {
             font-size: 0.7rem;
             padding: 0.7rem 0.7rem;
             outline: none;
@@ -60,15 +60,21 @@
         }
 }
 @media screen and (max-width: 665px) {
-    .button_container button {
+    .button_container .page-btn {
             font-size: 0.5rem;
-            padding: 0.6rem 0.5rem;
+            padding: 0.4rem 0.5rem;
             margin: 3px 4px;
             border-radius: 5px;
             border: 1px solid var(--secondary-color);
             transition: 0.3s !important;
         }
+    .extension{
+            font-size: 0.5rem;
+                        padding: 0.4rem 0.5rem;
+                        display: none;
+                }
     .button_container{
         flex-wrap: wrap;
+        padding: 1em 0.3em;
     }
 }

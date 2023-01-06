@@ -15,7 +15,7 @@ function Pages({ totalPages, page, setPage, lastPage, firstPage }) {
             disabled={page <= 1}
             onClick={() => setPage(page - 1)}
           >
-            <i className="fa-solid fa-angles-left"></i> Previous
+            <i className="fa-solid fa-angles-left"></i> Prev
           </button>
           {pages.map((p, index) => {
             if (index + 1 >= firstPage && index + 1 <= lastPage) {
@@ -37,16 +37,7 @@ function Pages({ totalPages, page, setPage, lastPage, firstPage }) {
           ) : (
             <button className="extension">...</button>
           )}
-          <button
-            className={
-              page === totalPages ? "page-btn active_button" : "page-btn"
-            }
-            onClick={() => {
-              setPage(totalPages);
-            }}
-          >
-            {totalPages}
-          </button>
+
           <button
             disabled={page === totalPages}
             onClick={() => setPage(page + 1)}

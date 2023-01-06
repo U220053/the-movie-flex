@@ -5,14 +5,14 @@ import { fetchData } from "./api/index";
 import Banner from "./components/Banner/Banner";
 import Cards from "./components/Card/Cards";
 import Pages from "./components/Pages/Pages";
-
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   const [shows, setShows] = useState([]);
   const [movie, setMovie] = useState([]);
   const [trailerurl, setTrailerurl] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [lastPage, setLastPage] = useState(9);
+  const [lastPage, setLastPage] = useState(8);
   const [firstPage, setFirstPage] = useState(1);
   useEffect(() => {
     fetchData(`${requests.fetchTrending}${page}`)
@@ -23,7 +23,7 @@ function App() {
         setShows(data.results);
         if (page === lastPage && page < totalPages + 10) {
           setFirstPage(page);
-          setLastPage((l) => l + 9);
+          setLastPage((l) => l + 8);
         }
         window.scrollTo(0, 0);
       })
@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <Banner
         movie={movie}
         trailerurl={trailerurl}

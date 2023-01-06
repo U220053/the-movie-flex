@@ -36,7 +36,6 @@ function Banner({ movie, trailerurl, setTrailerurl }) {
                "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
            )`,
           backgroundPosition: "center-center",
-          filter: "brightness(70%)",
         }}
       >
         <div className="banner__contents">
