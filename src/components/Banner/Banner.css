@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .banner{
     color: white;
     object-fit: contain;
@@ -72,3 +73,17 @@
        bottom: 0px;
        left: 0px;
    }
+
+   @media only screen and (max-width: 560px){ 
+    .banner{
+         width: 50em !important; 
+        
+    }
+    
+} 
+@media only screen and (max-width: 850px){ 
+    .banner{
+        width: 50em !important;
+        
+    }
+}
