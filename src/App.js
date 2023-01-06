@@ -6,7 +6,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./Home";
 import Detail from "./components/Details/Detail";
+import loading from "./Resources/loading.gif";
+import Loder from "./components/Loder/Loder";
 function App() {
+  const [loading, setLoading] = useState(false);
   const [location, setLocation] = useState(null);
   const [details, setDetails] = useState(null);
   const [isBollyWood, setIsBollyWood] = useState(false);
@@ -89,40 +92,52 @@ function App() {
         .catch((err) => console.log(err));
     }
   }, [setLocation, location]);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4800);
+  }, []);
 
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              movie={movie}
-              setIsBollyWood={setIsBollyWood}
-              setGenre={setGenre}
-              setMovies={setMovies}
-              setQuality={setQuality}
-              setTv={setTv}
-              setSeries={setSeries}
-              setYear={setYear}
-              shows={shows}
-              totalPages={totalPages}
-              page={page}
-              setPage={setPage}
-              setFirstPage={setFirstPage}
-              setLastPage={setLastPage}
-              firstPage={firstPage}
-              lastPage={lastPage}
+    <>
+      {loading ? (
+        <Loder />
+      ) : (
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  movie={movie}
+                  setIsBollyWood={setIsBollyWood}
+                  setGenre={setGenre}
+                  setMovies={setMovies}
+                  setQuality={setQuality}
+                  setTv={setTv}
+                  setSeries={setSeries}
+                  setYear={setYear}
+                  shows={shows}
+                  totalPages={totalPages}
+                  page={page}
+                  setPage={setPage}
+                  setFirstPage={setFirstPage}
+                  setLastPage={setLastPage}
+                  firstPage={firstPage}
+                  lastPage={lastPage}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/:id"
-          element={<Detail setLocation={setLocation} details={details} />}
-        />
-      </Routes>
-    </BrowserRouter>
+            <Route
+              path="/:id"
+              element={<Detail setLocation={setLocation} details={details} />}
+            />
+          </Routes>
+        </BrowserRouter>
+      )}
+    </>
   );
 }
 
