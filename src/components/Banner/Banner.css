@@ -83,7 +83,7 @@
         
     }
     .banner{
-        over-fit:cover;
+        object-fit:cover;
     }
     .banner__title{
         max-width: 100%;
