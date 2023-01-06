@@ -66,10 +66,17 @@
 .banner__buttons{
     margin-top: 1rem;
 }
+.banner-link{
+    text-decoration: none;
+    color: #fff;
+}
    .banner__button:hover{
        color: rgb(0, 0, 0);
        background-color: #fff;
        transition: all 0.2s;
+   }
+   .banner__button:hover .banner-link{
+    color: #000;
    }
   
    .banner--fadeBottom{

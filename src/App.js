@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import requests from "./api/requests";
-import { fetchData } from "./api/index";
-import Banner from "./components/Banner/Banner";
-import Cards from "./components/Card/Cards";
-import Pages from "./components/Pages/Pages";
+import { fetchData, fetchDetails } from "./api/index";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Filters from "./components/Filters/Filters";
+import Home from "./Home";
+import Detail from "./components/Details/Detail";
 function App() {
+  const [location, setLocation] = useState(null);
+  const [details, setDetails] = useState(null);
   const [isBollyWood, setIsBollyWood] = useState(false);
   const [shows, setShows] = useState([]);
   const [movie, setMovie] = useState([]);
-  const [trailerurl, setTrailerurl] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [lastPage, setLastPage] = useState(8);
@@ -78,39 +78,51 @@ function App() {
         })
         .catch((err) => console.error(err));
     }
-    console.log(shows);
-
     // eslint-disable-next-line
   }, [isBollyWood, page, genre, tv]);
+  useEffect(() => {
+    if (location) {
+      fetchDetails(location)
+        .then((data) => {
+          setDetails(data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [setLocation, location]);
 
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <Banner
-        movie={movie}
-        trailerurl={trailerurl}
-        setTrailerurl={setTrailerurl}
-      />
-      <Filters
-        setIsBollyWood={setIsBollyWood}
-        setGenre={setGenre}
-        setMovies={setMovies}
-        setQuality={setQuality}
-        setTv={setTv}
-        setSeries={setSeries}
-        setYear={setYear}
-      />
-      <Cards shows={shows} />
-      <Pages
-        totalPages={totalPages}
-        page={page}
-        setPage={setPage}
-        lastPage={lastPage}
-        firstPage={firstPage}
-        setFirstPage={setFirstPage}
-        setLastPage={setLastPage}
-      />
-    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              movie={movie}
+              setIsBollyWood={setIsBollyWood}
+              setGenre={setGenre}
+              setMovies={setMovies}
+              setQuality={setQuality}
+              setTv={setTv}
+              setSeries={setSeries}
+              setYear={setYear}
+              shows={shows}
+              totalPages={totalPages}
+              page={page}
+              setPage={setPage}
+              setFirstPage={setFirstPage}
+              setLastPage={setLastPage}
+              firstPage={firstPage}
+              lastPage={lastPage}
+            />
+          }
+        />
+        <Route
+          path="/:id"
+          element={<Detail setLocation={setLocation} details={details} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

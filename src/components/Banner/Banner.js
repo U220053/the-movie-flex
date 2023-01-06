@@ -1,35 +1,12 @@
 import { truncate } from "../../handlers/descriptionHandlers";
 import "./Banner.css";
-import movieTrailer from "movie-trailer";
-import YouTube from "react-youtube";
+import { Link } from "react-router-dom";
 
-function Banner({ movie, trailerurl, setTrailerurl }) {
-  const handleClick = (movie) => {
-    if (trailerurl) {
-      setTrailerurl("");
-    } else {
-      movieTrailer(movie?.name || "")
-        .then((url) => {
-          const urlParams = new URLSearchParams(new URL(url).search);
-          setTrailerurl(urlParams.get("v"));
-        })
-        .catch((error) => console.log(error));
-    }
-  };
-
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-
+function Banner({ movie }) {
   return (
     <div>
       <header
         className="banner"
-        onClick={() => setTrailerurl("")}
         style={{
           backgroundSize: "cover",
           backgroundImage: `url(
@@ -43,11 +20,10 @@ function Banner({ movie, trailerurl, setTrailerurl }) {
             {movie?.title || movie?.name || movie?.original_name}
           </h1>
           <div className="banner__buttons">
-            <button
-              onClick={() => handleClick(movie)}
-              className="banner__button"
-            >
-              Trailer
+            <button className="banner__button">
+              <Link to={`/${movie.id}`} className="banner-link">
+                Download
+              </Link>
             </button>
             <button className="banner__button">My List</button>
           </div>
@@ -58,8 +34,6 @@ function Banner({ movie, trailerurl, setTrailerurl }) {
 
         <div className="banner--fadeBottom" />
       </header>
-
-      {trailerurl && <YouTube videoId={trailerurl} opts={opts} />}
     </div>
   );
 }
