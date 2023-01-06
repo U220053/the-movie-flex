@@ -21,7 +21,7 @@
 }
 
 .nav-logo {
-    width: 60%;    
+    width: 70%;    
     height: auto;
     object-fit: contain;  
     border-radius: 1rem;
@@ -68,4 +68,40 @@
     font-size: 20px;
     padding: 11px;
     color: #fff;
+}
+
+@media screen and (max-width: 550px) {
+    .nav-logo {
+            width: 60%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 1rem;
+            font-size: large;
+    
+        }
+.search {
+    width: 100%;
+
+}
+.nav-container {
+    flex-direction: column;
+    justify-content: center;
+    height: 98px;
+    padding: 0px 14px;
+}
+#s{
+    width: 100%;
+    margin-left: 0;
+}
+.fa-search {
+    border-radius: 50%;
+    background-color: #34963c;
+    font-size: 20px;
+    /* padding: 11px; */
+    color: #fff;
+}
+.sbtn {
+    right: 0%;
+    
+}
 }
